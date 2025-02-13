@@ -7,7 +7,8 @@ import jakarta.persistence.Access;
 import jakarta.persistence.AccessType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Lob;
-import java.time.LocalDate;
+
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Entity
@@ -15,7 +16,7 @@ import java.util.Objects;
 public class Personaxe {
     @Id
     @Column(length = 10)
-    private int idPersonaxe;
+    private Long idPersonaxe;
     @Column(length = 16)
     private String importancia;
     @Column(length = 125)
@@ -26,12 +27,12 @@ public class Personaxe {
     private String nomeOrixinal;
     @Column(length = 6)
     private String sexo;
-    private LocalDate dataNacemento;
+    private LocalDateTime dataNacemento;
     @Column(length = 125)
     private String paisNacemento;
     @Column(length = 125)
     private String cidadeNacemento;
-    private LocalDate dataDefuncion;
+    private LocalDateTime dataDefuncion;
     @Column(length = 125)
     private String paisDefuncion;
     @Column(length = 125)
@@ -50,7 +51,7 @@ public class Personaxe {
     public Personaxe() {
     }
 
-    public Personaxe(int idPersonaxe, String importancia, String nome, String nomeOrdenado, String nomeOrixinal, String sexo, LocalDate dataNacemento, String paisNacemento, String cidadeNacemento, LocalDate dataDefuncion, String paisDefuncion, String cidadeDefuncion, String bio, String estudio, String texto, String textoFilmografia, String revisado) {
+    public Personaxe(Long idPersonaxe, String importancia, String nome, String nomeOrdenado, String nomeOrixinal, String sexo, LocalDateTime dataNacemento, String paisNacemento, String cidadeNacemento, LocalDateTime dataDefuncion, String paisDefuncion, String cidadeDefuncion, String bio, String estudio, String texto, String textoFilmografia, String revisado) {
         this.idPersonaxe = idPersonaxe;
         this.importancia = importancia;
         this.nome = nome;
@@ -70,11 +71,11 @@ public class Personaxe {
         this.revisado = revisado;
     }
 
-    public int getIdPersonaxe() {
+    public Long getIdPersonaxe() {
         return idPersonaxe;
     }
 
-    public void setIdPersonaxe(int idPersonaxe) {
+    public void setIdPersonaxe(Long idPersonaxe) {
         this.idPersonaxe = idPersonaxe;
     }
 
@@ -118,11 +119,11 @@ public class Personaxe {
         this.sexo = sexo;
     }
 
-    public LocalDate getDataNacemento() {
+    public LocalDateTime getDataNacemento() {
         return dataNacemento;
     }
 
-    public void setDataNacemento(LocalDate dataNacemento) {
+    public void setDataNacemento(LocalDateTime dataNacemento) {
         this.dataNacemento = dataNacemento;
     }
 
@@ -142,11 +143,11 @@ public class Personaxe {
         this.cidadeNacemento = cidadeNacemento;
     }
 
-    public LocalDate getDataDefuncion() {
+    public LocalDateTime getDataDefuncion() {
         return dataDefuncion;
     }
 
-    public void setDataDefuncion(LocalDate dataDefuncion) {
+    public void setDataDefuncion(LocalDateTime dataDefuncion) {
         this.dataDefuncion = dataDefuncion;
     }
 

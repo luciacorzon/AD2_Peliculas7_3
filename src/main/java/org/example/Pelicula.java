@@ -10,7 +10,7 @@ import java.util.Objects;
 public class Pelicula {
     @Id
     @Column(length = 10)
-    private int idPelicula;
+    private Long idPelicula;
     @Column(length = 50)
     private String musica;
     @Column(length = 125)
@@ -22,11 +22,11 @@ public class Pelicula {
     @Column(length = 50)
     private String xenero;
     @Column(length = 5)
-    private int anoInicio;
+    private Short anoInicio;
     @Column(length = 125)
     private String pais;
     @Column(length = 5)
-    private int duracion;
+    private Short duracion;
     @Column(length = 25)
     private String outrasDuracions;
     @Column(length = 12)
@@ -40,14 +40,14 @@ public class Pelicula {
     @Lob
     private String texto;
     @Lob
-    private Long poster;
+    private byte[] poster;
     @Column(length = 10)
     private String revisado;
 
     public Pelicula() {
     }
 
-    public Pelicula(int idPelicula, String musica, String orixinal, String ingles, String castelan, String xenero, int anoInicio, String pais, int duracion, String outrasDuracions, String cor, String son, String video, String laserDisc, String texto, Long poster, String revisado) {
+    public Pelicula(Long idPelicula, String musica, String orixinal, String ingles, String castelan, String xenero, Short anoInicio, String pais, Short duracion, String outrasDuracions, String cor, String son, String video, String laserDisc, String texto, byte[] poster, String revisado) {
         this.idPelicula = idPelicula;
         this.musica = musica;
         this.orixinal = orixinal;
@@ -67,11 +67,11 @@ public class Pelicula {
         this.revisado = revisado;
     }
 
-    public int getIdPelicula() {
+    public Long getIdPelicula() {
         return idPelicula;
     }
 
-    public void setIdPelicula(int idPelicula) {
+    public void setIdPelicula(Long idPelicula) {
         this.idPelicula = idPelicula;
     }
 
@@ -115,11 +115,11 @@ public class Pelicula {
         this.xenero = xenero;
     }
 
-    public int getAnoInicio() {
+    public Short getAnoInicio() {
         return anoInicio;
     }
 
-    public void setAnoInicio(int anoInicio) {
+    public void setAnoInicio(Short anoInicio) {
         this.anoInicio = anoInicio;
     }
 
@@ -131,11 +131,11 @@ public class Pelicula {
         this.pais = pais;
     }
 
-    public int getDuracion() {
+    public Short getDuracion() {
         return duracion;
     }
 
-    public void setDuracion(int duracion) {
+    public void setDuracion(Short duracion) {
         this.duracion = duracion;
     }
 
@@ -187,11 +187,11 @@ public class Pelicula {
         this.outrasDuracions = outrasDuracions;
     }
 
-    public Long getPoster() {
+    public byte[] getPoster() {
         return poster;
     }
 
-    public void setPoster(Long poster) {
+    public void setPoster(byte[] poster) {
         this.poster = poster;
     }
 

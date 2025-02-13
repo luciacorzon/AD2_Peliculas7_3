@@ -1,18 +1,19 @@
 package org.example;
 
-import jakarta.persistence.Column;
-
-import jakarta.persistence.Access;
-import jakarta.persistence.AccessType;
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 
 @Entity
 @Access(AccessType.FIELD)
 public class Ocupacion {
+    @Id
     @Column(length = 50)
     private String ocupacion;
     @Column(length = 11)
-    private int orde;
+    private Integer orde;
+
+    @OneToMany(mappedBy = "ocupacion")
+    @Basic(fetch = FetchType.LAZY)
+    private PeliculaPersonaxe peliculaPersonaxe;
 
     public Ocupacion() {
     }
@@ -30,11 +31,11 @@ public class Ocupacion {
         this.ocupacion = ocupacion;
     }
 
-    public int getOrde() {
+    public Integer getOrde() {
         return orde;
     }
 
-    public void setOrde(int orde) {
+    public void setOrde(Integer orde) {
         this.orde = orde;
     }
 
