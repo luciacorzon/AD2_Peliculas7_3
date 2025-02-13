@@ -7,16 +7,14 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        //EntityManager em = JPAUtil.getEntityManager();
-        //Pelicula p = em.find(Pelicula.class, 20);
+        EntityManager em = JPAUtil.getEntityManager(JPAUtil.PELICULASH2);
+        Pelicula p = em.find(Pelicula.class, 20);
 
-        //TypedQuery<Pelicula> query = em.createNameQuery("SELECT p FROM Pelicula p WHERE p.anoInicio IS NOT NULL;", Pelicula.class);
-        //List<Pelicula> peliculas = query.getResultList();
-        /*
-        for(Pelicula p : peliculas){
-            System.out.println(p);
+        TypedQuery<Pelicula> query = em.createNamedQuery("SELECT p FROM Pelicula p WHERE p.anoInicio IS NOT NULL;", Pelicula.class);
+        List<Pelicula> peliculas = query.getResultList();
+
+        for(Pelicula peli : peliculas){
+            System.out.println(peli);
         }
-        */
-
     }
 }

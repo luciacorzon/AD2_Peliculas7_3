@@ -2,6 +2,8 @@ package org.example;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Access(AccessType.FIELD)
 public class Ocupacion {
@@ -12,8 +14,9 @@ public class Ocupacion {
     private Integer orde;
 
     @OneToMany(mappedBy = "ocupacion")
+    // Os datos solo se cargan cando se accede a eles directamente desde o código
     @Basic(fetch = FetchType.LAZY)
-    private PeliculaPersonaxe peliculaPersonaxe;
+    private List<PeliculaPersonaxe> peliculaPersonaxe;
 
     public Ocupacion() {
     }
@@ -37,6 +40,14 @@ public class Ocupacion {
 
     public void setOrde(Integer orde) {
         this.orde = orde;
+    }
+
+    public List<PeliculaPersonaxe> getPeliculaPersonaxe() {
+        return peliculaPersonaxe;
+    }
+
+    public void setPeliculaPersonaxe(List<PeliculaPersonaxe> peliculaPersonaxe) {
+        this.peliculaPersonaxe = peliculaPersonaxe;
     }
 
     @Override
