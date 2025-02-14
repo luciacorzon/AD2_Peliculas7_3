@@ -16,5 +16,16 @@ public class Main {
         for(Pelicula peli : peliculas){
             System.out.println(peli);
         }
+
+        var q = em.createQuery("SELECT p FROM Pelicula p JOIN p.personaxes pp JOIN pp.personaxe per WHERE per.nomeOrdenado LIKE 'Antonio Banderas';", Pelicula.class);
+
+        var pelis = q.getResultList();
+
+        for (Pelicula peli2 : pelis) {
+            System.out.println(peli2);
+        }
+
+        // Obtener todos los países que no tienen películas asociadas
+        //TypedQuery<String> query2 = em.createQuery("SELECT p FROM Pais p JOIN Pelicula pel ON p.pais = pel.pais;", Pais.class);
     }
 }
